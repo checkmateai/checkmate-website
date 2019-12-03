@@ -37,7 +37,8 @@ class HomeSplash extends React.Component {
 
     const ProjectTitle = () => (
       <h2 className="projectTitle">
-        {siteConfig.title}
+        {/* {siteConfig.title} */}
+        <img src={siteConfig.darkLogo} alt="Project Logo" width="500px"/>
         <small>{siteConfig.tagline}</small>
       </h2>
     );
@@ -60,13 +61,15 @@ class HomeSplash extends React.Component {
 
     return (
       <SplashContainer>
-        <Logo img_src={`${baseUrl}img/undraw_monitor.svg`} />
+        {/* <Logo img_src={`${baseUrl}img/undraw_monitor.svg`} /> */}
         <div className="inner">
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
-            <Button href="#try">Try It Out</Button>
-            <Button href={docUrl('doc1.html')}>Example Link</Button>
-            <Button href={docUrl('doc2.html')}>Example Link 2</Button>
+            <Button href="https://arxiv.org/abs/1910.02653">Paper</Button>
+            <Button href="https://github.com/checkmateai/checkmateai">Github</Button>
+            <Button href="/docs/tutorials_home">Tutorials</Button>
+            <Button href="/docs/docs_home">Documentation</Button>
+            {/* <Button href={docUrl('doc1.html')}>Example Link</Button> */}
           </PromoSection>
         </div>
       </SplashContainer>
@@ -85,124 +88,60 @@ class Index extends React.Component {
         id={props.id}
         background={props.background}>
         <GridBlock
-          align="center"
+          align="left"
           contents={props.children}
           layout={props.layout}
         />
       </Container>
     );
 
-    const FeatureCallout = () => (
-      <div
-        className="productShowcaseSection paddingBottom"
-        style={{textAlign: 'center'}}>
-        <h2>Feature Callout</h2>
-        <MarkdownBlock>These are features of this project</MarkdownBlock>
-      </div>
-    );
-
-    const TryOut = () => (
-      <Block id="try">
-        {[
-          {
-            content:
-              'To make your landing page more attractive, use illustrations! Check out ' +
-              '[**unDraw**](https://undraw.co/) which provides you with customizable illustrations which are free to use. ' +
-              'The illustrations you see on this page are from unDraw.',
-            image: `${baseUrl}img/undraw_code_review.svg`,
-            imageAlign: 'left',
-            title: 'Wonderful SVG Illustrations',
-          },
-        ]}
-      </Block>
-    );
-
-    const Description = () => (
-      <Block background="dark">
-        {[
-          {
-            content:
-              'This is another description of how this project is useful',
-            image: `${baseUrl}img/undraw_note_list.svg`,
-            imageAlign: 'right',
-            title: 'Description',
-          },
-        ]}
-      </Block>
-    );
-
-    const LearnHow = () => (
+    const MemoryGrowing = () => (
       <Block background="light">
         {[
           {
             content:
-              'Each new Docusaurus project has **randomly-generated** theme colors.',
-            image: `${baseUrl}img/undraw_youtube_tutorial.svg`,
+              '<ul><li>Deep learning architectures increasingly require more memory. Researchers cite memory limits as a pain-point limiting progress in deep learning.</li><li>Hardware is struggling to keep up with the memory requirements for the latest models. DRAM density improvements are slowing rapidly due to the end of Dennard scaling and Moore\'s law.</li><li>Per-layer activations remain the dominant consumer of GPU DRAM.</li></ul>',
+            image: `${baseUrl}img/homepage_story/1_model_memory.svg`,
             imageAlign: 'right',
-            title: 'Randomly Generated Theme Colors',
+            title: 'Neural networks are bigger than ever.',
           },
         ]}
       </Block>
     );
 
-    const Features = () => (
-      <Block layout="fourColumn">
+    const RecomputationIdea = () => (
+      <Block background="light">
         {[
           {
-            content: 'This is the content of my feature',
-            image: `${baseUrl}img/undraw_react.svg`,
-            imageAlign: 'top',
-            title: 'Feature One',
-          },
-          {
-            content: 'The content of my second feature',
-            image: `${baseUrl}img/undraw_operating_system.svg`,
-            imageAlign: 'top',
-            title: 'Feature Two',
+            content:
+              '<ul><li>If we try to evaluate this 3-layer DNN, we will run out-of-memory.</li><li>CheckMate will discard the result of layer B at timestep 3, thus freeing enough memory for training to continue</li><li>Layer B is recomputed again at timestep 5, just in time for the corresponding gradient operation.</li></ul>',
+            image: `${baseUrl}img/homepage_story/2_illustrated_example.svg`,
+            imageAlign: 'left',
+            title: 'CheckMate squeezes big networks into small DRAM capacities by recomputing parts of your neural net\'s graph.',
           },
         ]}
       </Block>
     );
 
-    const Showcase = () => {
-      if ((siteConfig.users || []).length === 0) {
-        return null;
-      }
-
-      const showcase = siteConfig.users
-        .filter(user => user.pinned)
-        .map(user => (
-          <a href={user.infoLink} key={user.infoLink}>
-            <img src={user.image} alt={user.caption} title={user.caption} />
-          </a>
-        ));
-
-      const pageUrl = page => baseUrl + (language ? `${language}/` : '') + page;
-
-      return (
-        <div className="productShowcaseSection paddingBottom">
-          <h2>Who is Using This?</h2>
-          <p>This project is used by all these people</p>
-          <div className="logos">{showcase}</div>
-          <div className="more-users">
-            <a className="button" href={pageUrl('users.html')}>
-              More {siteConfig.title} Users
-            </a>
-          </div>
-        </div>
-      );
-    };
+    const MaxBS = () => (
+      <Block background="light">
+        {[
+          {
+            image: `${baseUrl}img/homepage_story/3_maxbs.svg`,
+            imageAlign: 'left',
+            title: 'CheckMate can help train up to 4.9x larger neural networks on today\'s GPUs.',
+          },
+        ]}
+      </Block>
+    );
 
     return (
       <div>
         <HomeSplash siteConfig={siteConfig} language={language} />
         <div className="mainContainer">
-          <Features />
-          <FeatureCallout />
-          <LearnHow />
-          <TryOut />
-          <Description />
-          <Showcase />
+          <MemoryGrowing />
+          <RecomputationIdea />
+          <MaxBS />
         </div>
       </div>
     );

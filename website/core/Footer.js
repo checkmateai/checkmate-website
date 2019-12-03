@@ -24,7 +24,7 @@ class Footer extends React.Component {
   render() {
     return (
       <footer className="nav-footer" id="footer">
-        <section className="sitemap">
+        {/* <section className="sitemap">
           <a href={this.props.config.baseUrl} className="nav-home">
             {this.props.config.footerIcon && (
               <img
@@ -103,20 +103,20 @@ class Footer extends React.Component {
               </div>
             )}
           </div>
-        </section>
+        </section> */}
 
         <a
-          href="https://opensource.facebook.com/"
+          href="https://rise.cs.berkeley.edu/"
           target="_blank"
           rel="noreferrer noopener"
           className="fbOpenSource">
           <img
-            src={`${this.props.config.baseUrl}img/oss_logo.png`}
-            alt="Facebook Open Source"
+            src={`${this.props.config.baseUrl}img/rise_logo.png`}
+            alt="UC Berkeley RISELab"
             width="170"
             height="45"
           />
-        </a>
+        </a> 
         <section className="copyright">{this.props.config.copyright}</section>
       </footer>
     );

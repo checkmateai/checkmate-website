@@ -3,35 +3,24 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "A website for testing",
+    "tagline": "Train huge neural nets without running out of GPU memory",
     "docs": {
-      "doc1": {
-        "title": "Latin-ish",
-        "sidebar_label": "Example Page"
+      "docs_home": {
+        "title": "Getting started with CheckMate",
+        "sidebar_label": "Getting started"
       },
-      "doc2": {
-        "title": "document number 2"
-      },
-      "doc3": {
-        "title": "This is document number 3"
-      },
-      "doc4": {
-        "title": "Other Document"
-      },
-      "doc5": {
-        "title": "Fifth Document"
+      "tutorials_home": {
+        "title": "Tutorials",
+        "sidebar_label": "Tutorials"
       }
     },
     "links": {
       "Docs": "Docs",
-      "API": "API",
-      "Help": "Help",
-      "Blog": "Blog"
+      "Tutorials": "Tutorials"
     },
     "categories": {
-      "Docusaurus": "Docusaurus",
-      "First Category": "First Category",
-      "Second Category": "Second Category"
+      "Tutorials": "Tutorials",
+      "Documentation": "Documentation"
     }
   },
   "pages-strings": {
