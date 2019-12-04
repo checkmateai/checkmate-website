@@ -54,6 +54,7 @@ const siteConfig = {
 
   lightLogo: 'img/light_logo.svg',
   darkLogo: 'img/dark_logo.svg',
+  lightLogoPNG: 'img/light_logo.png',
   darkLogoPNG: 'img/dark_logo.png',
 
   /* Colors for website */
