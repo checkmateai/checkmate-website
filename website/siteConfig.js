@@ -30,8 +30,8 @@ const siteConfig = {
   //   baseUrl: '/test-site/',
 
   // Used for publishing and more
-  projectName: 'checkmate',
-  organizationName: 'UC Berkeley RISELab',
+  projectName: 'checkmateai.github.io',
+  organizationName: 'checkmateai',
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
   //   organizationName: 'JoelMarcey'
@@ -54,6 +54,7 @@ const siteConfig = {
 
   lightLogo: 'img/light_logo.svg',
   darkLogo: 'img/dark_logo.svg',
+  darkLogoPNG: 'img/dark_logo.png',
 
   /* Colors for website */
   colors: { //8ace99
