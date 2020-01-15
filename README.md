@@ -1,9 +1,6 @@
 # Checkmate
 
-Checkmate helps you train huge neural nets without running out of GPU memory. One line of code will avoid the fatal `CUDA_OUT_OF_MEMORY` error!
-
-**Checkmate will be released in January 2020**. Keep an eye out for the upcoming release!
-
+If you are looking for the Checkmate project, please see https://github.com/checkmateai.
 
 ## Citation
 If you use Checkmate in your work, please cite us with:
